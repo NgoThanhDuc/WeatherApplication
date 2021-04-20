@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="error_title">Error While Searching</string>
+    <string name="warning_title">Warning while grant permission</string>
+    <string name="okey">OK</string>
+    <string name="no">No</string>
+    <string name="error_message">The corresponding city name cannot be found, please check again !!!</string>
+    <string name="error_message2">(E.g. Saigon, Hanoi, London, France,...)</string>
+    <string name="warning_message">For a good experience, please grant permission to the application.</string>
+    <string name="warning_message2"></string>
+    <string name="no_data">none</string>
+    <string name="design">Ngo Thanh Duc</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="midday_uv">UV</string>
+    <string name="details">Details</string>
+    <string name="text_default">- -</string>
+    <string name="hint_toolbar">City, State</string>
+    <string name="no_connect">No Connection</string>
+    <string name="check_your_connect">Please Check Your Connection</string>
+    <string name="retry">Retry</string>
+    <string name="details2">Wind, Atmospheric, Rain Snow volume</string>
+    <string name="speed">"Speed"</string>
+    <string name="direction">"Direction"</string>
+    <string name="pressure">"Pressure"</string>
+    <string name="temperature">"Temperature"</string>
+    <string name="rain_volume">"For last hour"</string>
+    <string name="hai_cham">:  </string>
+    <string name="sun"><![CDATA[Sunrise & Sunset]]></string>
+    <string name="time_sunrise">00:00</string>
+    <string name="time_sunset">00:00</string>
+    <string name="gust">Gust</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="morning">Morning</string>
+    <string name="day">Day</string>
+    <string name="evening">"Evening "</string>
+    <string name="night">"Night "</string>
+    <string name="cloudiness">Cloudiness</string>
+    <string name="precipitation">Precipitation</string>
+    <string name="dew_point">Dew Point</string>
+    <string name="uv_index">UV Index</string>
+    <string name="rai_chart">The amount of rain per hour per minute (mm)</string>
+    <string name="dialog_no_update">WeatherApp cannot update because it is not connected to the internet.</string>
+    <string name="celsius">°C</string>
+    <string name="dvd">°</string>
+    <string name="fahrenheit">°F</string>
+    <string name="midday_uv_index">UV index</string>
+    <string name="search_city_by_continent">Search city by continent</string>
+    <string name="continent">Continent</string>
+    <string name="states">States</string>
+    <string name="cities">Cities</string>
+    <string name="hourly">Hourly</string>
+    <string name="ngothanhduc">Thanh Duc Ngo</string>
+    <string name="email">ngothanhduc1662000@gmail.com</string>
+    <string name="message_dialog_exit_1">Do you want to exit?</string>
+    <string name="message_dialog_exit_2">If back button is pressed by mistake then click on no to continue.</string>
+    <string name="yes">Yes</string>
+
+
+    <!--Continent: lục địa-->
+    <string-array name="continent">
+        <item>America</item>
+        <item>Asia-Pacific</item>
+        <item>Europe</item>
+        <item>Middle East / Africa</item>
+    </string-array>
+
+    <!--States: khu vực-->
+    <string-array name="state_america">
+        <item>North America</item>
+        <item>South America</item>
+        <item>Central America</item>
+        <item>Caribbean</item>
+    </string-array>
+
+    <string-array name="state_asia_pacific">
+        <item>Central Asia</item>
+        <item>South Asia</item>
+        <item>Northeast Asia</item>
+        <item>Southeast Asia</item>
+        <item>Australia and Oceania</item>
+    </string-array>
+
+    <string-array name="state_europe">
+        <item>Northern Europe</item>
+        <item>Southern Europe</item>
+        <item>Eastern Europe</item>
+        <item>Western Europe</item>
+    </string-array>
+
+    <string-array name="state_middleEast_africa">
+        <item>Middle East</item>
+        <item>North Africa</item>
+        <item>Southern Africa</item>
+    </string-array>
+
+    <!--cities-->
+    <!--cities America-->
+    <string-array name="cities_north_america">
+        <item>Mexico</item>
+        <item>Toronto</item>
+        <item>Chicago</item>
+        <item>Havana</item>
+        <item>Montreal</item>
+    </string-array>
+
+    <string-array name="cities_south_america">
+        <item>Lima</item>
+        <item>Santiago</item>
+        <item>Caracas</item>
+        <item>Salvador</item>
+        <item>Guayaquil</item>
+    </string-array>
+
+    <string-array name="cities_central_america">
+        <item>Tegucigalpa</item>
+        <item>Managua</item>
+        <item>Guatemala</item>
+        <item>Panama</item>
+        <item>Leon</item>
+    </string-array>
+
+    <string-array name="cities_caribbean">
+        <item>Domingo</item>
+        <item>Havana</item>
+        <item>Kingston</item>
+        <item>Nassau</item>
+        <item>Chaguanas</item>
+    </string-array>
+
+
+    <!--cities Asia-Pacific -->
+    <string-array name="cities_central_asisa">
+        <item>Almaty</item>
+        <item>Bishkek</item>
+        <item>Dushanbe</item>
+        <item>Ashgabat</item>
+        <item>Bukhara</item>
+    </string-array>
+
+    <string-array name="cities_south_asisa">
+        <item>Delhi</item>
+        <item>Karachi</item>
+        <item>Dhaka</item>
+        <item>Mumbai</item>
+        <item>Kolkata</item>
+    </string-array>
+
+    <string-array name="cities_northeast_asisa">
+        <item>Shanghai</item>
+        <item>Beijing</item>
+        <item>Tokyo</item>
+        <item>Erdenet</item>
+        <item>Pyongyang</item>
+    </string-array>
+
+    <string-array name="cities_southeast_asisa">
+        <item>Jakarta</item>
+        <item>Bangkok</item>
+        <item>Saigon</item>
+        <item>Hanoi</item>
+        <item>Singapore</item>
+    </string-array>
+
+    <string-array name="cities_australia_and_oceania">
+        <item>Sydney</item>
+        <item>Melbourne</item>
+        <item>Brisbane</item>
+        <item>Auckland</item>
+        <item>Honolulu</item>
+    </string-array>
+
+
+    <!--cities Europe  -->
+    <string-array name="cities_northern_europe">
+        <item>Tallinn</item>
+        <item>Uppsala</item>
+        <item>Trondheim</item>
+        <item>Vilnius</item>
+        <item>Reykjavik</item>
+    </string-array>
+
+    <string-array name="cities_southern_europe">
+        <item>Rome</item>
+        <item>Barcelona</item>
+        <item>Madrid</item>
+        <item>Lisbon</item>
+        <item>Venice</item>
+    </string-array>
+
+    <string-array name="cities_eastern_europe">
+        <item>Petersburg</item>
+        <item>Krakow</item>
+        <item>Prague</item>
+        <item>Budapest</item>
+        <item>Mostar</item>
+    </string-array>
+
+    <string-array name="cities_western_europe">
+        <item>Paris</item>
+        <item>Naples</item>
+        <item>Venice</item>
+        <item>Milan</item>
+        <item>Granada</item>
+    </string-array>
+
+
+    <!--cities Middle East / Africa -->
+    <string-array name="citise_middle_east">
+        <item>Cairo</item>
+        <item>Tehran</item>
+        <item>Istanbul</item>
+        <item>Baghdad</item>
+        <item>Riyadh</item>
+    </string-array>
+
+    <string-array name="citise_north_africa">
+        <item>Alexandria</item>
+        <item>Algiers</item>
+        <item>Ankara</item>
+        <item>Baghdad</item>
+        <item>Bursa</item>
+    </string-array>
+
+    <string-array name="citise_southern_africa">
+        <item>Durban</item>
+        <item>Johannesburg</item>
+        <item>Soweto</item>
+        <item>Pretoria</item>
+        <item>Benoni</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="load_data">Please wait...</string>
+
+
+</resources>

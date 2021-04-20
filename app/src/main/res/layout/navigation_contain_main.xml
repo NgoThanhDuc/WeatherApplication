@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_nav_bar"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dms_16dp"
+        android:paddingTop="@dimen/dms_16dp"
+        android:paddingRight="@dimen/dms_16dp"
+        android:paddingBottom="@dimen/dms_16dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:paddingTop="@dimen/dms_8dp"
+            android:src="@drawable/ngothanhduc"
+            app:civ_border_color="#009688"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dms_8dp"
+            android:text="@string/ngothanhduc"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dms_5dp"
+                android:layout_marginTop="@dimen/dms_5dp"
+                android:layout_marginRight="@dimen/dms_5dp"
+                app:cardCornerRadius="@dimen/dms_10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/txt_celsius"
+                        android:layout_width="@dimen/dms_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/celsius"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dm_22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_fahrenheit"
+                        android:layout_width="@dimen/dms_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/fahrenheit"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dm_22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dms_5dp"
+                android:layout_marginTop="@dimen/dms_10dp"
+                android:layout_marginRight="@dimen/dms_5dp"
+                android:layout_marginBottom="@dimen/dms_15dp"
+                app:cardCornerRadius="@dimen/dms_10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dms_8dp"
+                    android:layout_marginBottom="@dimen/dms_8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dms_10dp"
+                        android:layout_marginBottom="@dimen/dms_10dp"
+                        android:text="@string/search_city_by_continent"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dm_20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dms_10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="@dimen/dms_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/continent"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dm_18sp" />
+
+                        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                            android:id="@+id/continent_spinner"
+                            android:layout_width="@dimen/dms_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:smsp_hint="Choose a continent"
+                            app:smsp_itemColor="#512DA8"
+                            app:smsp_itemListColor="#7C4DFF"
+                            app:smsp_itemListHintBackgroundColor="#808080"
+                            app:smsp_itemSize="@dimen/dm_16sp"
+                            app:smsp_multilineError="false"
+                            app:smsp_selectedItemListColor="#FF5252" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dms_10dp"
+                        android:layout_marginBottom="@dimen/dms_5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="@dimen/dms_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/states"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dm_18sp" />
+
+                        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                            android:id="@+id/states_spinner"
+                            android:layout_width="@dimen/dms_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:smsp_hint="Choose a state"
+                            app:smsp_itemColor="#512DA8"
+                            android:entries="@array/state_america"
+                            app:smsp_itemListColor="#7C4DFF"
+                            app:smsp_itemListHintBackgroundColor="#808080"
+                            app:smsp_itemSize="@dimen/dm_16sp"
+                            app:smsp_multilineError="false"
+                            app:smsp_selectedItemListColor="#FF5252" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dms_10dp"
+                        android:layout_marginBottom="@dimen/dms_5dp"
+                        android:text="@string/cities"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dm_18sp" />
+
+                    <ListView
+                        android:id="@+id/listViewCities"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dms_250dp"
+                        android:layout_marginLeft="@dimen/dms_10dp"
+                        android:layout_marginBottom="@dimen/dms_10dp"
+                        android:listSelector="@drawable/list_view_selector"
+                        android:overScrollMode="never"
+                        tools:ignore="NestedScrolling" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dms_10dp"
+    android:layout_marginRight="@dimen/dms_10dp"
+    android:layout_marginTop="@dimen/dms_15dp"
+    android:layout_marginBottom="@dimen/dms_15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dms_20dp"
+        android:text="@string/sun"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/dm_18sp"
+        android:textStyle="bold" />
+
+    <com.marcinmoskala.arcseekbar.ArcSeekBar
+        android:id="@+id/arcSeekBarSun"
+        android:layout_width="@dimen/dms_250dp"
+        android:layout_height="@dimen/dms_100dp"
+        android:layout_gravity="center"
+        app:enabled="false"
+        app:progressBackgroundColor="@android:color/holo_purple"
+        app:progressColor="@android:color/holo_orange_light"
+        app:progressWidth="@dimen/dms_5dp"
+        app:thumb="@drawable/custom_thumb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dms_5dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_sunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dms_5dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="@dimen/dms_10dp"
+                android:text="@string/time_sunrise"
+                android:textSize="@dimen/dm_14sp" />
+
+            <ImageView
+                android:id="@+id/img_sunrise"
+                android:layout_width="@dimen/dms_35dp"
+                android:layout_height="@dimen/dms_35dp"
+                android:layout_marginLeft="@dimen/dms_10dp"
+                android:layout_marginBottom="@dimen/dms_5dp"
+                android:src="@drawable/sunrise" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="@dimen/dms_55dp"
+            android:layout_height="@dimen/dms_55dp"
+            android:layout_weight="1"
+            android:src="@drawable/sun" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_sunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dms_5dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_marginRight="@dimen/dms_10dp"
+                android:text="@string/time_sunrise"
+                android:textSize="@dimen/dm_14sp" />
+
+            <ImageView
+                android:id="@+id/img_sunset"
+                android:layout_width="@dimen/dms_35dp"
+                android:layout_height="@dimen/dms_35dp"
+                android:layout_marginRight="@dimen/dms_10dp"
+                android:layout_marginBottom="@dimen/dms_5dp"
+                android:src="@drawable/sunrise" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

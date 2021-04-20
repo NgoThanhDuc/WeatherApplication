@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDialogContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dms_20dp"
+    android:padding="@dimen/dms_20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDialogWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitleWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_warning_background"
+            android:padding="@dimen/dms_10dp"
+            android:text="@string/warning_title"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dm_18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageIconWarning"
+            android:layout_width="@dimen/dms_25dp"
+            android:layout_height="@dimen/dms_25dp"
+            android:layout_marginEnd="@dimen/dms_10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_warning"
+            android:tint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textTitleWarning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitleWarning"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            android:id="@+id/textMessageWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dms_20dp"
+            android:layout_marginTop="@dimen/dms_30dp"
+            android:layout_marginEnd="@dimen/dms_20dp"
+            android:layout_marginBottom="@dimen/dms_50dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/dm_16sp"
+            android:gravity="center"
+            android:text="@string/warning_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleWarning" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_warningNo"
+        android:layout_width="@dimen/dms_0dp"
+        android:layout_height="@dimen/dms_40dp"
+        android:layout_marginStart="@dimen/dms_40dp"
+        android:layout_marginEnd="@dimen/dms_10dp"
+        android:background="@drawable/button_neutral_background"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dm_14sp"
+        android:text="@string/no"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutDialogWarning"
+        app:layout_constraintEnd_toStartOf="@+id/btn_warningYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDialogWarning" />
+
+    <Button
+        android:id="@+id/btn_warningYes"
+        android:layout_width="@dimen/dms_0dp"
+        android:layout_height="@dimen/dms_40dp"
+        android:layout_marginStart="@dimen/dms_10dp"
+        android:layout_marginEnd="@dimen/dms_40dp"
+        android:background="@drawable/button_warning_background"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dm_14sp"
+        android:text="@string/yes"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutDialogWarning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_warningNo"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDialogWarning" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

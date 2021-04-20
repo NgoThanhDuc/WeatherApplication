@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/dms_15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_root"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/imageGif"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dms_300dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/giff"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_connect"
+                android:layout_below="@+id/imageGif"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dms_5dp"
+                android:textSize="@dimen/dm_24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_bright"/>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_your_connect"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dms_30dp"
+                android:textSize="@dimen/dm_20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_bright"
+                android:layout_above="@+id/imageGif"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry"
+                android:background="@drawable/shape"
+                android:paddingStart="@dimen/dms_30dp"
+                android:paddingEnd="@dimen/dms_30dp"
+                android:paddingTop="@dimen/dms_20dp"
+                android:paddingBottom="@dimen/dms_20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dms_15dp"
+                android:textSize="@dimen/dm_18sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@+id/text1"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

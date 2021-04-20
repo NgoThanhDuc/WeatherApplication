@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_timeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#1A000000"
+            android:drawableRight="@drawable/ic_arrow_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/dms_10dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dm_22sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:layout_below="@+id/txt_timeline">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_summary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txt_timeline"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/dms_10dp"
+        android:layout_marginRight="@dimen/dms_10dp"
+        android:layout_marginBottom="@dimen/dms_15dp"
+        app:cardCornerRadius="@dimen/dms_30dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#4E4A4A"
+            android:paddingBottom="@dimen/dms_16dp"
+            app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            app:itemTextColor="@color/colorWhite"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:menu="@menu/bottom_navigation_menu" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

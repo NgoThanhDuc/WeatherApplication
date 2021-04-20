@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDialogContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dms_20dp"
+    android:padding="@dimen/dms_20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_error_background"
+            android:padding="@dimen/dms_10dp"
+            android:text="@string/error_title"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dm_18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="@dimen/dms_25dp"
+            android:layout_height="@dimen/dms_25dp"
+            android:layout_marginEnd="@dimen/dms_10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_error"
+            android:tint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitle"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dms_20dp"
+            android:layout_marginTop="@dimen/dms_18dp"
+            android:layout_marginEnd="@dimen/dms_20dp"
+            android:layout_marginBottom="@dimen/dms_60dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/dm_16sp"
+            android:text="@string/error_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <TextView
+            android:id="@+id/textMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dms_20dp"
+            android:layout_marginTop="@dimen/dms_18dp"
+            android:layout_marginEnd="@dimen/dms_20dp"
+            android:layout_marginBottom="@dimen/dms_50dp"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dm_12sp"
+            android:text="@string/error_message2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonAction"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dms_40dp"
+        android:layout_marginStart="@dimen/dms_40dp"
+        android:layout_marginEnd="@dimen/dms_40dp"
+        android:background="@drawable/button_error_background"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dm_14sp"
+        android:text="@string/okey"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutDialog"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDialog" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

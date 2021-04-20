@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorYellow">#FFEB3B</color>
+
+    <color name="colorError">#CC0000</color>
+    <color name="colorWarning">#FFCC00</color>
+    <color name="colorNeutral">#434343</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="gray">#D29E9999</color>
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="colorTransparent20">#33000000</color>
+
+    <color name="colorGradientStart">#D9FF43</color>
+    <color name="colorGradientCenter">#F67831</color>
+    <color name="colorGradientEnd">#FF1493</color>
+
+
+    <!-- color scroll -->
+    <color name="scroll_atmosphere_mist">#c5b5b5</color>
+    <color name="scroll_atmosphere_squalls">#899cab</color>
+    <color name="scroll_atmosphere_tornado">#8575a4</color>
+    <color name="scroll_broken_clouds_mor">#7aaddc</color>
+    <color name="scroll_broken_clouds_night">#7aaddc</color>
+    <color name="scroll_clear_mor">#16a2df</color>
+    <color name="scroll_clear_night">#814cfe</color>
+    <color name="scroll_drizzle">#87b3e0</color>
+    <color name="scroll_fewclouds_mor">#49b6df</color>
+    <color name="scroll_fewclouds_night">#8a71f1</color>
+    <color name="scroll_overcast_clouds">#9cb4da</color>
+    <color name="scroll_rain">#156aeb</color>
+    <color name="scroll_rain_and_snow">#72979f</color>
+    <color name="scroll_scattered_clouds_mor">#68abd8</color>
+    <color name="scroll_scattered_clouds_night">#918ee5</color>
+    <color name="scroll_snow_heavy_snow">#a8a4bb</color>
+    <color name="scroll_snow_light_snow">#9bacca</color>
+    <color name="scroll_snow_sleet">#899cab</color>
+    <color name="scroll_snow_snow">#b3b5c4</color>
+    <color name="scroll_thunderstorm">#9b437d</color>
+
+    <!-- color tooltab -->
+
+</resources>

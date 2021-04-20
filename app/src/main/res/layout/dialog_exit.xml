@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dms_350dp"
+    app:cardBackgroundColor="@android:color/holo_red_light"
+    app:cardCornerRadius="@dimen/dms_15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dms_120dp"
+                android:layout_height="@dimen/dms_120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dms_15dp"
+                android:layout_marginBottom="@dimen/dms_15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_sad" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/dms_15dp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dms_20dp"
+                android:layout_marginBottom="@dimen/dms_10dp"
+                android:text="@string/message_dialog_exit_1"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dm_24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dms_20dp"
+                android:gravity="center"
+                android:text="@string/message_dialog_exit_2"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dm_20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_dialogExitNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/no"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/dm_20sp" />
+
+                <Button
+                    android:id="@+id/btn_dialogExitYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/yes"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/dm_20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#33000000"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dms_10dp"
+            android:layout_marginTop="@dimen/dms_5dp"
+            android:layout_marginRight="@dimen/dms_10dp"
+            app:cardCornerRadius="@dimen/dms_5dp">
+
+            <FrameLayout
+                android:id="@+id/toolbar_container"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    app:titleTextColor="@android:color/black" />
+
+                <com.miguelcatalan.materialsearchview.MaterialSearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:hint="@string/hint_toolbar"
+                    android:theme="@style/AppTheme.PopupOverlay"
+                    app:speechMode="true" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dms_2dp">
+
+            <ListView
+                android:id="@+id/listViewSearchHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dms_5dp"
+                android:layout_marginRight="@dimen/dms_5dp"
+                android:background="@android:color/white"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/dms_5dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_listview_search_history" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabbLayout_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabTextColor="@android:color/white" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>

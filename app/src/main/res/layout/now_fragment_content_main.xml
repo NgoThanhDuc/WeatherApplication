@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/dms_14dp"
+    android:layout_marginRight="@dimen/dms_10dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dms_10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/txt_day"
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center|start"
+            android:text="@string/text_default"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dm_24sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dms_tru_20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="@dimen/dms_120dp"
+            android:layout_marginTop="@dimen/dms_10dp"
+            android:layout_weight="1"
+            android:gravity="center|start">
+
+            <TextView
+                android:id="@+id/txt_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_default"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/dm_80sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lable_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_temp"
+                android:text="@string/dvd"
+                android:paddingTop="@dimen/dms_13dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="@dimen/dm_40sp"
+        android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/dms_0dp"
+            android:layout_height="@dimen/dms_120dp"
+            android:layout_marginTop="@dimen/dms_10dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/img_icon"
+                android:layout_width="@dimen/dms_100dp"
+                android:layout_height="@dimen/dms_100dp"
+                android:scaleType="fitXY" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dms_tru_10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txt_clouds"
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="@string/text_default"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dm_22sp" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/text_default"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dm_22sp" />
+    </LinearLayout>
+
+</LinearLayout>

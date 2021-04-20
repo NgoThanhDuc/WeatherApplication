@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="10">
+    
+    <LinearLayout
+        android:layout_width="@dimen/dms_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:layout_marginLeft="@dimen/dms_15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_daySummaryDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:text="@string/text_default"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/dm_18sp"/>
+
+        <TextView
+            android:id="@+id/txt_descSummaryDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:text="@string/text_default"
+            android:textSize="@dimen/dm_18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="@dimen/dms_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginRight="@dimen/dms_15dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageViewSummaryDaily"
+                android:layout_width="@dimen/dms_80dp"
+                android:layout_height="@dimen/dms_80dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dms_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_tempMaxSummaryDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|end"
+                android:drawableRight="@drawable/ic_arrow_temp_max"
+                android:text="@string/text_default"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/dm_18sp" />
+
+            <TextView
+                android:id="@+id/txt_tempMinSummaryDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|end"
+                android:drawableRight="@drawable/ic_arrow_temp_min"
+                android:text="@string/text_default"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/dm_18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

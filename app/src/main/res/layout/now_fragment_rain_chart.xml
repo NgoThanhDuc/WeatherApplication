@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dms_15dp"
+    android:layout_marginLeft="@dimen/dms_10dp"
+    android:layout_marginRight="@dimen/dms_10dp"
+    android:layout_marginBottom="@dimen/dms_15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dms_20dp"
+        android:text="@string/rai_chart"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/dm_18sp"
+        android:textStyle="bold" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dms_250dp" />
+
+
+</LinearLayout>
+
