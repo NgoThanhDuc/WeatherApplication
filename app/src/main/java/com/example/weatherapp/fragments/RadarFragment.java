@@ -1,4 +1,4 @@
-package com.example.weatherapp.fragment;
+package com.example.weatherapp.fragments;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import androidx.fragment.app.Fragment;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.activity.MainActivity;
+import com.example.weatherapp.activities.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;

@@ -1,9 +1,8 @@
-package com.example.weatherapp.fragment;
+package com.example.weatherapp.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,15 +27,14 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weatherapp.MyWidget;
 import com.example.weatherapp.R;
-import com.example.weatherapp.activity.MainActivity;
-import com.example.weatherapp.adapter.HourlyWeatherAdapter;
-import com.example.weatherapp.adapter.MultiViewAdapter;
+import com.example.weatherapp.activities.MainActivity;
+import com.example.weatherapp.adapters.HourlyWeatherAdapter;
+import com.example.weatherapp.adapters.MultiViewAdapter;
 import com.example.weatherapp.models.HourlyWeather;
 import com.example.weatherapp.models.MultiView;
-import com.example.weatherapp.until.ConvertsUntil;
-import com.example.weatherapp.until.DialogUntil;
+import com.example.weatherapp.utils.ConvertsUtil;
+import com.example.weatherapp.utils.MyWidget;
 import com.github.mikephil.charting.data.BarEntry;
 
 import org.jetbrains.annotations.NotNull;
@@ -57,7 +54,6 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-import static android.view.WindowManager.*;
 import static com.example.weatherapp.models.MultiView.NOW_FRAGMENT_DETAIL;
 import static com.example.weatherapp.models.MultiView.NOW_FRAGMENT_RAIN_CHART;
 import static com.example.weatherapp.models.MultiView.NOW_FRAGMENT_SUN;
@@ -72,7 +68,7 @@ public class NowFragment extends Fragment {
     private LinearLayout linearHourly;
 
     //until
-    private ConvertsUntil convertsUntil;
+    private ConvertsUtil convertsUtil;
 
     private String longitude = "", latitude = "";
     private String defaultCity = "";
@@ -144,7 +140,7 @@ public class NowFragment extends Fragment {
 
         activityMain = (MainActivity) getActivity();
 
-        convertsUntil = new ConvertsUntil();
+        convertsUtil = new ConvertsUtil();
         hourlyWeatherList = new ArrayList<HourlyWeather>(); // data
         layoutManagerHourly = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
@@ -397,12 +393,12 @@ public class NowFragment extends Fragment {
                         JSONArray jsonArrayHourly = jsonObjectRoot.getJSONArray("hourly");
                         for (int i = 0; i < jsonArrayHourly.length(); i++) {
                             JSONObject jsonObjectHourly = jsonArrayHourly.getJSONObject(i);
-                            String dtHourly = convertsUntil.convertTime(jsonObjectHourly.getString("dt"), "HH a");
+                            String dtHourly = convertsUtil.convertTime(jsonObjectHourly.getString("dt"), "HH a");
 
                             if (activityMain.loadFileTemperature().equals("°C"))
-                                tempHourly = convertsUntil.convertKelvinToCelsius(jsonObjectHourly.getString("temp")) + "°";
+                                tempHourly = convertsUtil.convertKelvinToCelsius(jsonObjectHourly.getString("temp")) + "°";
                             else
-                                tempHourly = convertsUntil.convertKelvinToFahrenheit(jsonObjectHourly.getString("temp")) + "°";
+                                tempHourly = convertsUtil.convertKelvinToFahrenheit(jsonObjectHourly.getString("temp")) + "°";
 
                             JSONArray jsonArrayWeatherHourly = jsonObjectHourly.getJSONArray("weather");
                             JSONObject jsonObjectWeatherHourly = jsonArrayWeatherHourly.getJSONObject(0);
@@ -424,27 +420,27 @@ public class NowFragment extends Fragment {
                         // current
                         JSONObject jsonObjectCurrent = jsonObjectRoot.getJSONObject("current");
 
-                        String dt = convertsUntil.convertTime(jsonObjectCurrent.getString("dt"), "E, MMM d yyyy");   //time
+                        String dt = convertsUtil.convertTime(jsonObjectCurrent.getString("dt"), "E, MMM d yyyy");   //time
 
                         if (activityMain.loadFileTemperature().equals("°C")) {
-                            temp = convertsUntil.convertKelvinToCelsius(jsonObjectCurrent.getString("temp"));          // nhiệt độ hiện tại
-                            feels_like = convertsUntil.convertKelvinToCelsius(jsonObjectCurrent.getString("feels_like")) + "°";  // nhiệt độ cảm thấy như
-                            dew_point = convertsUntil.convertKelvinToCelsius(jsonObjectCurrent.getString("dew_point")) + "°";    // Nhiệt độ khí quyển
+                            temp = convertsUtil.convertKelvinToCelsius(jsonObjectCurrent.getString("temp"));          // nhiệt độ hiện tại
+                            feels_like = convertsUtil.convertKelvinToCelsius(jsonObjectCurrent.getString("feels_like")) + "°";  // nhiệt độ cảm thấy như
+                            dew_point = convertsUtil.convertKelvinToCelsius(jsonObjectCurrent.getString("dew_point")) + "°";    // Nhiệt độ khí quyển
                             setTexts(lable_temp, "°C");
                             tempWidget = temp + "°C";
 
                         } else {
-                            temp = convertsUntil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("temp"));          // nhiệt độ hiện tại
-                            feels_like = convertsUntil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("feels_like")) + "°";  // nhiệt độ cảm thấy như
-                            dew_point = convertsUntil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("dew_point")) + "°";    // Nhiệt độ khí quyển
+                            temp = convertsUtil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("temp"));          // nhiệt độ hiện tại
+                            feels_like = convertsUtil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("feels_like")) + "°";  // nhiệt độ cảm thấy như
+                            dew_point = convertsUtil.convertKelvinToFahrenheit(jsonObjectCurrent.getString("dew_point")) + "°";    // Nhiệt độ khí quyển
                             setTexts(lable_temp, "°F");
                             tempWidget = temp + "°F";
                         }
 
                         String pressure = jsonObjectCurrent.getString("pressure") + " hPa";      // áp suất
                         String humidity = jsonObjectCurrent.getString("humidity") + "%";      // độ ẩm
-                        String visibility = convertsUntil.convertMeterToKilometer(jsonObjectCurrent.getString("visibility")) + " km";  // tầm nhìn
-                        String wind_speed = convertsUntil.convertMetersPerSecondToKilometersPerHour(jsonObjectCurrent.getString("wind_speed")) + " km/h";  // tốc độ gió
+                        String visibility = convertsUtil.convertMeterToKilometer(jsonObjectCurrent.getString("visibility")) + " km";  // tầm nhìn
+                        String wind_speed = convertsUtil.convertMetersPerSecondToKilometersPerHour(jsonObjectCurrent.getString("wind_speed")) + " km/h";  // tốc độ gió
                         String wind_deg = jsonObjectCurrent.getString("wind_deg") + "°";      //  Hướng gió, độ
 
                         String wind_gust = ""; // cơn gió mạnh(mm) nếu có
@@ -502,8 +498,8 @@ public class NowFragment extends Fragment {
                         multiViewList.add(new MultiView(NOW_FRAGMENT_WARS, wind_speed, wind_deg, wind_gust, pressure, dew_point, rain_volume, snow_volume));
 
                         //ArcSeekBar sun
-                        String timeSunrise = convertsUntil.convertTime(jsonObjectCurrent.getString("sunrise"), "d MMMM YYYY, HH:mm a");    // thời gian mặt trời mọc
-                        String timeSunset = convertsUntil.convertTime(jsonObjectCurrent.getString("sunset"), "d MMMM YYYY, HH:mm a");    // thời gian mặt trời lặn
+                        String timeSunrise = convertsUtil.convertTime(jsonObjectCurrent.getString("sunrise"), "d MMMM YYYY, HH:mm a");    // thời gian mặt trời mọc
+                        String timeSunset = convertsUtil.convertTime(jsonObjectCurrent.getString("sunset"), "d MMMM YYYY, HH:mm a");    // thời gian mặt trời lặn
 
                         String minTimeSun, maxTimeSun; // biến kiểm tra sunrise, sunset để lấy lớn nhỏ (min trước, max đứng sau)
 
@@ -513,8 +509,8 @@ public class NowFragment extends Fragment {
 
                         sunMaxSeekBar = Math.abs(int_sunset - int_sunrise);
                         sunProgressSun = (int) Math.abs((System.currentTimeMillis() / 1000) - Math.min(int_sunrise, int_sunset));
-                        minTimeSun = convertsUntil.convertTime(String.valueOf(Math.min(int_sunrise, int_sunset)), "MMM d YYYY HH:mm a");
-                        maxTimeSun = convertsUntil.convertTime(String.valueOf(Math.max(int_sunrise, int_sunset)), "MMM d YYYY HH:mm a");
+                        minTimeSun = convertsUtil.convertTime(String.valueOf(Math.min(int_sunrise, int_sunset)), "MMM d YYYY HH:mm a");
+                        maxTimeSun = convertsUtil.convertTime(String.valueOf(Math.max(int_sunrise, int_sunset)), "MMM d YYYY HH:mm a");
 
                         if (timeSunrise.substring(0, 2).equals(timeSunset.substring(0, 2))) { // cùng ngày
 
@@ -538,7 +534,7 @@ public class NowFragment extends Fragment {
                             jsonArrayMinutely = jsonObjectRoot.getJSONArray("minutely");
                             for (int i = 0; i < jsonArrayMinutely.length(); i++) {
                                 JSONObject jsonObjectMinutely = jsonArrayMinutely.getJSONObject(i);
-                                String dtRain = convertsUntil.convertTime(jsonObjectMinutely.getString("dt"), "HH:mm");
+                                String dtRain = convertsUtil.convertTime(jsonObjectMinutely.getString("dt"), "HH:mm");
                                 String rain = jsonObjectMinutely.getString("precipitation");
 
                                 float precipitation = Float.parseFloat(rain);
@@ -555,7 +551,7 @@ public class NowFragment extends Fragment {
                         }
 
                         //getDataWidget
-                        int image = convertsUntil.setImageWidget(main, description, codeIcon);
+                        int image = convertsUtil.setImageWidget(main, description, codeIcon);
                         Paper.book().write("temp", tempWidget);
                         Paper.book().write("image", image);
 

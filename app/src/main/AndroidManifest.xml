@@ -17,20 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:name=".MyWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/my_widget_info" />
-        </receiver>
-
-        <activity android:name=".activity.MainActivity"
+        <activity android:name=".activities.MainActivity"
             android:launchMode="singleTop"/>
 
-        <activity android:name=".activity.SplashScreenActivity">
+        <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".until.NetworkChangeReceiver">
+        <receiver android:name=".network.NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

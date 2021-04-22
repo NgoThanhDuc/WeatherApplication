@@ -1,4 +1,4 @@
-package com.example.weatherapp.adapter;
+package com.example.weatherapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.activity.MainActivity;
+import com.example.weatherapp.activities.MainActivity;
 import com.example.weatherapp.models.SearchHistory;
-import com.example.weatherapp.until.CheckConnection;
+import com.example.weatherapp.network.CheckConnection;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -126,7 +126,7 @@ public class SearchHistoryAdapter extends BaseAdapter implements Filterable {
                     mainActivity.searchView.closeSearch();
                     mainActivity.toolbarRoot.setTitle(citySearch);
                 } else {
-                    mainActivity.dialogUntil.showDialogNoUpdateData(mainActivity);
+                    mainActivity.dialogUtil.showDialogNoUpdateData(mainActivity);
                 }
             }
         });

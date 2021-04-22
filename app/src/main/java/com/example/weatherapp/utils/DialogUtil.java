@@ -1,4 +1,4 @@
-package com.example.weatherapp.until;
+package com.example.weatherapp.utils;
 
 import android.Manifest;
 import android.app.Activity;
@@ -14,11 +14,12 @@ import android.widget.Button;
 import androidx.core.app.ActivityCompat;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.activity.MainActivity;
+import com.example.weatherapp.activities.MainActivity;
+import com.example.weatherapp.network.CheckConnection;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
-public class DialogUntil {
+public class DialogUtil {
 
     private Dialog dialogCheckConnection = null;
 

@@ -1,4 +1,4 @@
-package com.example.weatherapp.activity;
+package com.example.weatherapp.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -22,15 +22,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.until.DialogUntil;
-import com.example.weatherapp.until.NetworkChangeReceiver;
+import com.example.weatherapp.utils.DialogUtil;
+import com.example.weatherapp.network.NetworkChangeReceiver;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
     private ImageView imageView, imageView2, imageView3, imageView4;
     private TextView textView;
     private Animation animation;
-    private DialogUntil dialogUntil;
+    private DialogUtil dialogUtil;
     private BroadcastReceiver mNetworkReceiver;
     private final int DELAY_MILLIS = 4000;
 
@@ -64,7 +64,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         imageView4.setAnimation(getAnimation(this, R.anim.bottom_splash_screen));
         textView.setAnimation(getAnimation(this, R.anim.blink));
 
-        dialogUntil = new DialogUntil();
+        dialogUtil = new DialogUtil();
     }
 
     private Animation getAnimation(Context context, int anim) {
@@ -115,7 +115,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
 
             } else {
-                dialogUntil.showDialogWarningPermission(SplashScreenActivity.this);
+                dialogUtil.showDialogWarningPermission(SplashScreenActivity.this);
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

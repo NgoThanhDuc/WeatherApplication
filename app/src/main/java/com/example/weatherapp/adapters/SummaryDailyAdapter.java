@@ -1,4 +1,4 @@
-package com.example.weatherapp.adapter;
+package com.example.weatherapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.SummaryRecyclerViewClickInterface;
+import com.example.weatherapp.interfaces.SummaryRecyclerViewClickInterface;
 import com.example.weatherapp.models.SummaryDaily;
 import com.squareup.picasso.Picasso;
 

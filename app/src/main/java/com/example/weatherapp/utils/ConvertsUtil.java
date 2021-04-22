@@ -1,4 +1,4 @@
-package com.example.weatherapp.until;
+package com.example.weatherapp.utils;
 
 import com.example.weatherapp.R;
 
@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ConvertsUntil {
+public class ConvertsUtil {
 
     public String convertKelvinToCelsius(String temp) {
         Double kelvin = Double.valueOf(temp) - 273.15; // °K

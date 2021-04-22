@@ -1,4 +1,4 @@
-package com.example.weatherapp.activity;
+package com.example.weatherapp.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -30,14 +30,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.chivorn.smartmaterialspinner.SmartMaterialSpinner;
 import com.example.weatherapp.R;
-import com.example.weatherapp.adapter.MyFragmentAdapter;
-import com.example.weatherapp.adapter.SearchHistoryAdapter;
-import com.example.weatherapp.fragment.DailyFragment;
-import com.example.weatherapp.fragment.NowFragment;
-import com.example.weatherapp.fragment.RadarFragment;
+import com.example.weatherapp.adapters.MyFragmentAdapter;
+import com.example.weatherapp.adapters.SearchHistoryAdapter;
+import com.example.weatherapp.fragments.DailyFragment;
+import com.example.weatherapp.fragments.NowFragment;
+import com.example.weatherapp.fragments.RadarFragment;
 import com.example.weatherapp.models.SearchHistory;
-import com.example.weatherapp.until.CheckConnection;
-import com.example.weatherapp.until.DialogUntil;
+import com.example.weatherapp.network.CheckConnection;
+import com.example.weatherapp.utils.DialogUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     private SmartMaterialSpinner continentSpinner, statesSpinner;
     private ListView listViewNavigation;
 
-    public DialogUntil dialogUntil;
+    public DialogUtil dialogUtil;
 
     private double longitude = 0.0, latitude = 0.0;
     private String defaultCity = "";
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         //init Paper
         Paper.init(this);
 
-        dialogUntil = new DialogUntil();
+        dialogUtil = new DialogUtil();
 
     }
 
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 } else {
-                    dialogUntil.showDialogNoUpdateData(MainActivity.this);
+                    dialogUtil.showDialogNoUpdateData(MainActivity.this);
                 }
 
                 return false;
@@ -393,7 +393,7 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(navigationView);
                     toolbarRoot.setTitle(itemSelectListView);
                 } else {
-                    dialogUntil.showDialogNoUpdateData(MainActivity.this);
+                    dialogUtil.showDialogNoUpdateData(MainActivity.this);
                 }
             }
         });
@@ -724,7 +724,7 @@ public class MainActivity extends AppCompatActivity {
                 getCityCurrentLocation();
 
             } else {
-                dialogUntil.showDialogWarningPermission(MainActivity.this);
+                dialogUtil.showDialogWarningPermission(MainActivity.this);
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -735,7 +735,7 @@ public class MainActivity extends AppCompatActivity {
         if (searchView.isSearchOpen()) {
             searchView.closeSearch();
         } else {
-            dialogUntil.showDialogExit(MainActivity.this);
+            dialogUtil.showDialogExit(MainActivity.this);
         }
     }
 

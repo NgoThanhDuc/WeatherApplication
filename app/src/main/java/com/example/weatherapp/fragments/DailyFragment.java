@@ -1,4 +1,4 @@
-package com.example.weatherapp.fragment;
+package com.example.weatherapp.fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,15 +19,15 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weatherapp.DetailsRecyclerViewClickInterface;
+import com.example.weatherapp.interfaces.DetailsRecyclerViewClickInterface;
 import com.example.weatherapp.R;
-import com.example.weatherapp.SummaryRecyclerViewClickInterface;
-import com.example.weatherapp.activity.MainActivity;
-import com.example.weatherapp.adapter.DetailsDailyAdapter;
-import com.example.weatherapp.adapter.SummaryDailyAdapter;
+import com.example.weatherapp.interfaces.SummaryRecyclerViewClickInterface;
+import com.example.weatherapp.activities.MainActivity;
+import com.example.weatherapp.adapters.DetailsDailyAdapter;
+import com.example.weatherapp.adapters.SummaryDailyAdapter;
 import com.example.weatherapp.models.DetailsDaily;
 import com.example.weatherapp.models.SummaryDaily;
-import com.example.weatherapp.until.ConvertsUntil;
+import com.example.weatherapp.utils.ConvertsUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +52,7 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
     private CardView cardViewBottomNavigation;
 
     //until
-    private ConvertsUntil convertsUntil;
+    private ConvertsUtil convertsUtil;
 
     private String longitude = "", latitude = "";
     private String defaultCity = "";
@@ -126,7 +126,7 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
         Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.custom_divider);
         dividerItemDecoration.setDrawable(drawable);
         layoutManagerDetails = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        convertsUntil = new ConvertsUntil();
+        convertsUtil = new ConvertsUtil();
 
     }
 
@@ -297,8 +297,8 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
                             JSONObject jsonObjectDaily = jsonArrayDaily.getJSONObject(i);
 
                             //  day
-                            day = convertsUntil.convertTime(jsonObjectDaily.getString("dt"), "EEEE, MMM dd");
-                            dateDetailsDaily = convertsUntil.convertTime(jsonObjectDaily.getString("dt"), "MMMM d yyyy");
+                            day = convertsUtil.convertTime(jsonObjectDaily.getString("dt"), "EEEE, MMM dd");
+                            dateDetailsDaily = convertsUtil.convertTime(jsonObjectDaily.getString("dt"), "MMMM d yyyy");
 
                             //  timelineFirstly, timelineFinal from DailyFragment
                             for (int j = 0; j < jsonArrayDaily.length(); j = jsonArrayDaily.length() - 1) {
@@ -353,8 +353,8 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
                             }
                         });
 
-                        timelineFirstly = convertsUntil.convertTime(timeLineList.get(0).toString(), "MMM dd yyyy");
-                        timelineFinal = convertsUntil.convertTime(timeLineList.get(1).toString(), "MMM dd yyyy");
+                        timelineFirstly = convertsUtil.convertTime(timeLineList.get(0).toString(), "MMM dd yyyy");
+                        timelineFinal = convertsUtil.convertTime(timeLineList.get(1).toString(), "MMM dd yyyy");
                         setTexts(txt_timeline, timelineFirstly + " - " + timelineFinal);
 
                     } catch (JSONException e) {
@@ -371,19 +371,19 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
 
     private void getCelsiusFahrenheit(JSONObject jsonObjectTemp, JSONObject jsonObjectFeelsLike, JSONObject jsonObjectDaily) {
         try {
-            tempDay = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("day")) + "°";
-            tempNight = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("night")) + "°";
-            tempMax = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("max")) + "°";
-            tempMin = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("min")) + "°";
-            tempMorn = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("morn")) + "°";
-            tempEve = convertsUntil.convertKelvinToFahrenheit(jsonObjectTemp.getString("eve")) + "°";
+            tempDay = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("day")) + "°";
+            tempNight = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("night")) + "°";
+            tempMax = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("max")) + "°";
+            tempMin = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("min")) + "°";
+            tempMorn = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("morn")) + "°";
+            tempEve = convertsUtil.convertKelvinToFahrenheit(jsonObjectTemp.getString("eve")) + "°";
 
-            feelsLikeMorn = convertsUntil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("morn")) + "°";
-            feelsLikeEve = convertsUntil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("eve")) + "°";
-            feelsLikeDay = convertsUntil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("day")) + "°";
-            feelsLikeNight = convertsUntil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("night")) + "°";
+            feelsLikeMorn = convertsUtil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("morn")) + "°";
+            feelsLikeEve = convertsUtil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("eve")) + "°";
+            feelsLikeDay = convertsUtil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("day")) + "°";
+            feelsLikeNight = convertsUtil.convertKelvinToFahrenheit(jsonObjectFeelsLike.getString("night")) + "°";
             //  dewPoint
-            dewPoint = convertsUntil.convertKelvinToFahrenheit(jsonObjectDaily.getString("dew_point")) + "°";
+            dewPoint = convertsUtil.convertKelvinToFahrenheit(jsonObjectDaily.getString("dew_point")) + "°";
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -391,20 +391,20 @@ public class DailyFragment extends Fragment implements SummaryRecyclerViewClickI
 
     private void getCelsiusTemperature(JSONObject jsonObjectTemp, JSONObject jsonObjectFeelsLike, JSONObject jsonObjectDaily) {
         try {
-            tempDay = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("day")) + "°";
-            tempNight = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("night")) + "°";
-            tempMax = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("max")) + "°";
-            tempMin = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("min")) + "°";
-            tempMorn = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("morn")) + "°";
-            tempEve = convertsUntil.convertKelvinToCelsius(jsonObjectTemp.getString("eve")) + "°";
+            tempDay = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("day")) + "°";
+            tempNight = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("night")) + "°";
+            tempMax = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("max")) + "°";
+            tempMin = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("min")) + "°";
+            tempMorn = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("morn")) + "°";
+            tempEve = convertsUtil.convertKelvinToCelsius(jsonObjectTemp.getString("eve")) + "°";
 
-            feelsLikeMorn = convertsUntil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("morn")) + "°";
-            feelsLikeEve = convertsUntil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("eve")) + "°";
-            feelsLikeDay = convertsUntil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("day")) + "°";
-            feelsLikeNight = convertsUntil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("night")) + "°";
+            feelsLikeMorn = convertsUtil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("morn")) + "°";
+            feelsLikeEve = convertsUtil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("eve")) + "°";
+            feelsLikeDay = convertsUtil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("day")) + "°";
+            feelsLikeNight = convertsUtil.convertKelvinToCelsius(jsonObjectFeelsLike.getString("night")) + "°";
 
             //  dewPoint
-            dewPoint = convertsUntil.convertKelvinToCelsius(jsonObjectDaily.getString("dew_point")) + "°";
+            dewPoint = convertsUtil.convertKelvinToCelsius(jsonObjectDaily.getString("dew_point")) + "°";
         } catch (JSONException e) {
             e.printStackTrace();
         }
